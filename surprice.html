@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday My Love</title>
+  <link rel="stylesheet" href="style.css" />
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'baradley hand itc';
+  overflow: hidden;
+}
+
+/* General Page Styling */
+.page {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  background-color: pink;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Show First Page Initially */
+.page1 {
+  display: flex;
+  background-color: #ffb6c1;
+}
+
+/* Content Centering */
+.content {
+  position: relative;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+/* audio */ 
+audio {
+width:100%;
+marine-button:20px;
+}
+
+/* Button Styling */
+button {
+  background-color: white;
+  color: #ff69b4;
+  border: 2px solid #ff69b4;
+  padding: 15px 40px;
+  font-size: 1.0rem;
+  cursor: pointer;
+  border-radius: 30px;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #ff69b4;
+  color: white;
+}
+
+/* Page 2 Photo Slider */
+.page2 {
+  background-color: #ffc0cb;
+  display: flex;
+}
+
+.photo-container {
+  width: 150vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo-slider {
+  display: flex;
+  animation: slide 12s infinite linear;
+}
+
+.photo-slider img {
+  width: 350px;
+  height: 350px;
+  margin: 0 10px;
+  border-radius: 20px;
+  border: 5px solid white;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-300px); }
+  50% { transform: translateX(-600px); }
+  75% { transform: translateX(-900px); }
+  100% { transform: translateX(0); }
+}
+
+/* Page 3 Love Note */
+.page3 {
+  background-color: #ffccd5;
+  display: flex;
+  flex-direction: column;
+}
+
+.page3 h2, .page3 p, .page3 h1 {
+  margin: 20px;
+}
+
+/* Falling Hearts Animation */
+@keyframes fall {
+  0% {
+    transform: translateY(-10vh) scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) scale(1);
+    opacity: 0;
+  }
+}
+
+/* Generate Multiple Hearts */
+.heart {
+  position: absolute;
+  top: -10vh;
+  font-size: 0.5rem;
+  animation: fall 5s linear infinite;
+  opacity: 0;
+}
+
+/* Random Colors */
+.heart:nth-child(1) { left: 10%; animation-duration: 4s; color: red; }
+.heart:nth-child(2) { left: 20%; animation-duration: 6s; color: pink; }
+.heart:nth-child(3) { left: 30%; animation-duration: 5s; color: orange; }
+.heart:nth-child(4) { left: 40%; animation-duration: 7s; color: yellow; }
+.heart:nth-child(5) { left: 50%; animation-duration: 6s; color: purple; }
+.heart:nth-child(6) { left: 60%; animation-duration: 5s; color: lightblue; }
+.heart:nth-child(7) { left: 70%; animation-duration: 6s; color: green; }
+.heart:nth-child(8) { left: 80%; animation-duration: 5s; color: hotpink; }
+.heart:nth-child(9) { left: 90%; animation-duration: 4s; color: red; }
+
+/* Adding Hearts Dynamically */
+.page::before {
+  content: "😘🩷🥳🫂🥰";
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -20px); }
+  100% { transform: translate(-50%, 0); }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+  .photo-slider img {
+    width: 150px;
+    height: 150px;
+  }
+}
+</style>
+</head>
+<body>
+
+  <!-- Page 1: Birthday Wishes -->
+  <div class="page page1">
+    <div class="content">
+      <h1>Happy Birthday My Love 💖</h1>
+      <button onclick="nextPage()">Next</button>
+    </div>
+  </div>
+
+  <!-- Page 2: Photo Slider -->
+  <div class="page page2">
+    <div class="content">
+      <div class="photo-container">
+        <div class="photo-slider">
+          <img src="C:\Users\pushp\OneDrive\Dokumen\pushpa ml\full stack\hero2.jpg" alt="Photo 1" />
+          <img src="C:\Users\pushp\OneDrive\Dokumen\pushpa ml\full stack\myheart.jpg" alt="Photo 2" />
+          <img src="C:\Users\pushp\OneDrive\Dokumen\pushpa ml\full stack\myhero.jpg" alt="Photo 3" />
+        </div>
+      </div>
+      <button onclick="nextPage()">Next</button>
+    </div>
+  </div>
+
+ <!-- Page 3: Photo Slider -->
+  <div class="page page2">
+    <div class="content">
+      <div class="photo-container">
+        <div class="photo-slider">
+          <img src="C:\Users\pushp\OneDrive\Dokumen\pushpa ml\full stack\hero1.jpg" alt="Photo 1" />
+          <img src="C:\Users\pushp\OneDrive\Dokumen\pushpa ml\full stack\love3.jpg" alt="Photo 2" />
+          <img src="C:\Users\pushp\OneDrive\Dokumen\pushpa ml\full stack\love4.jpg" alt="Photo 3" />
+       </div>
+      </div>
+      <button onclick="nextPage()">Next</button>
+    </div>
+  </div>
+
+<!-- Page 4: Photo Slider -->
+  <div class="page page2">
+    <div class="content">
+      <div class="photo-container">
+        <div class="photo-slider">
+          <img src="C:\Users\pushp\OneDrive\Dokumen\pushpa ml\full stack\love.jpg" alt="Photo 1" />
+          <img src="C:\Users\pushp\OneDrive\Dokumen\pushpa ml\full stack\love1.jpg" alt="Photo 2" />
+          <img src="C:\Users\pushp\OneDrive\Dokumen\pushpa ml\full stack\memychinnoda.jpg" alt="Photo 3" />
+       </div>
+      </div>
+      <button onclick="nextPage()">Next</button>
+    </div>
+  </div>
+
+
+<!-- Page 5: Love Note -->
+  <div class="page page3">
+    <div class="content">
+      <h2>To My Dearest Love,</h2>
+      <p>Nv na valla antha badha paddavo nak thelusu life motham nak nv kavalii 🫂.    Na pina kopam vasthey nak cheppu kani matladakunda vundakuraa please nenu vundalenuu😞
+1.Nenu hostel lo vundi time pass cheyyanu 
+2.manchiga chadhuvukuntaa
+3.nv chepindhi vintaa 🫵🏻 and  nenu cheppedhi nv vinalii
+             Feelings vishayam loo matram nv thaginchukoo and nak vasthay antav kadha nijamee but not that type .Ni gurinchii alochinche every second nenu chala happy ga vunta. 
+    Future loo nitho vuntano ledho nak thelidhuu andhuku antee nenu korukunnadhedhi na life lo jaragale so ni pina em anukokudadhu anukuntunna .Nenu chala ante chala sensitive andhari vishayam lo kadhu only ni vishayam lone evvari gurinchi aanthaa alochinchanu but ni vishayam lo ala avundalekapothunna. Chala cheppali ani vundhii but eppudu Anni nv chadhavalantee opika vundali kadha so malli elanti best moment vasthey appudu cheptha
+                                                             I promise a situation ayina ninnu vodhulukonu . LOVE 😘 CHINNODA 🫂🫂  </p>
+      <h1>I LOVE YOU ❤</h1>
+      <button onclick="nextPage()">Next</button>
+    </div>
+  </div>
+
+  <!-- Page 6: Love Note -->
+  <div class="page page3">
+    <div class="content">
+      <h2>To My Dearest Love,</h2>
+      <p>You are my sunshine, my happiness, and my heart. I am so lucky to have you in my life. You make every moment special. Happy Birthday, my love!
+           Sorry chinnoda.....  </p>
+      <h1>HAPPY BIRTHDAY CHINNODA ❤</h1>
+      <button onclick="restart()">Restart</button>
+    </div>
+  </div>
+
+  <script>
+    let currentPage = 0;
+    const pages = document.querySelectorAll(".page");
+
+    function nextPage() {
+      pages[currentPage].style.display = "none";
+      currentPage++;
+      if (currentPage < pages.length) {
+        pages[currentPage].style.display = "flex";
+      }
+    }
+
+    function restart() {
+      pages[currentPage].style.display = "none";
+      currentPage = 0;
+      pages[currentPage].style.display = "flex";
+    }
+  </script>
+
+<audio> 
+<audio id="birthdayAudio" autoplay loop>
+  <source src="hbdaudio1.mp3" type="audio/mp3"/>
+</audio>
+
+</body>
+</html>
